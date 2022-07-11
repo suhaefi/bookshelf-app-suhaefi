@@ -1,0 +1,383 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 1.6em;
+    color: #f2f2f2;
+}
+
+h2{
+    font-size: 1.3em;
+}
+
+#content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bg-waves{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.border-and-shadow{
+    border-radius: 30px;
+    box-shadow: 0px 0px 12px 12px rgba(0, 0, 0, 0.3);
+}
+
+h1{
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+}
+
+/*  Bagian Untuk Menambah Buku */
+.add-book{
+    padding-top: 40px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%), url('../img/library-top.png');
+    background-blend-mode: screen;
+    object-fit: cover;
+    height: 425px;
+}
+
+.add-book .signature{
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+}
+
+.signature span{
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.add-book, .form-add-book{
+    z-index: 20;
+}
+
+.add-book .form-add-book{
+    margin: 30px 0px 10px 0px;
+    padding: 40px 30px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 0px;
+}
+
+input:focus{
+    outline: none !important;
+    box-shadow: 0px 0px 3px 2px rgba(44, 105, 209, 0.8);
+}
+
+input::placeholder{
+    font-size: 12px;
+}
+
+.form-add-book .input-group:nth-child(4){
+    display: flex;
+    justify-content: start;
+}
+
+.form-add-book .input-group #isFinished{
+    height: auto;
+}
+
+.form-add-book .input-group:nth-child(4) label{
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.btn{
+    font-size: 14px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c69d1;
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 3px 2px rgba(44, 105, 209, 0.8);
+}
+
+.btn-icon-wrapper{
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    background-color: #214c97;
+}
+
+.btn-icon{
+    width: 1.3em;
+    height: 1.3em;
+}
+
+/* Rak Buku Sebelum Dibaca, Pencarian Buku dan Detailnya, dan Rak Buku Selesai Dibaca */
+#listBooks{
+    display: flex;
+    position: relative;
+    gap: 40px;
+    justify-content: center;
+    padding-top: 40px;
+    background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%), url('../img/library-bottom.png');
+    background-blend-mode: screen;
+    object-fit: cover;
+    flex-wrap: wrap;
+    min-height: 470px;
+}
+
+
+#listBooks > div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 300px;
+    min-width: 300px;
+    max-width: 350px;
+    align-items: center;
+    z-index: 20;
+    margin-bottom: 60px;
+    background-color: #f2f2f2;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+#listBooks .bg-waves{
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+/* Bagian Pencarian dan Detail Buku */
+.search-book{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-book .form-search-book{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.form-search-book .note{
+    font-size: 10px;
+}
+
+.form-search-book .input-group{
+    gap: 0;
+    width: 100%;
+}
+
+.form-search-book .input-group input{
+    width: 100%;
+}
+
+.form-search-book input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-search-book .btn-search{
+    background-color: #214c97;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-search:hover{
+    box-shadow: 0px 0px 3px 2px rgba(44, 105, 209, 0.8);
+}
+
+.btn-search .btn-icon-search-wrapper{
+    display: flex;
+    padding: 6px;
+}
+
+.btn-search img{
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.book-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-details .form-book-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-update{
+    background-color: #ebab34;
+}
+
+.btn-delete{
+    margin-top: 0;
+    background-color: #ed4c4c;
+}
+
+.btn-delete .btn-icon-wrapper{
+    background-color: #a33636;
+}
+
+.btn-update .btn-icon-wrapper{
+    background-color: #b9882c;
+}
+
+.btn.btn-delete:hover{
+    box-shadow: 0px 0px 3px 2px rgba(237, 76, 76, 0.8);
+}
+
+.btn.btn-update:hover{
+    box-shadow: 0px 0px 3px 2px rgba(235, 171, 52, 0.8);
+}
+
+.form-search-book .input-group input{
+    border: 1px solid #6e6c6b
+}
+
+/* Rak Buku Yang Belum Dibaca */
+#listBooks .not-finished, .finished{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.not-finished h2, .finished h2{
+    display: inline-flex;
+    align-self: center;
+}
+
+.not-finished ol, .finished ol{
+    padding: 0 1%;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #6e6c6b;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.not-finished ol li, .finished ol li{
+    border-bottom: 1px solid #2c69d1;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.not-finished ol li span, .finished ol li span{
+    width: 70%;
+}
+
+.icon-wrapper-list-books{
+    display: flex;
+    gap: 5px;
+}
+.icon-wrapper-list-books .icon{
+    width: 1em;
+    height: 1em;
+}
+
+.icon-wrapper-list-books .icon-wrap:hover{
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.icon-wrapper-list-books .icon-wrap{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.check{
+    background-color: chartreuse;
+}
+
+.delete{
+    background-color: #ed4c4c;
+}
+
+.undo{
+    background-color: #6e6c6b;
+}
+
+#toast{
+    position: absolute;
+    padding: 20px;
+    z-index: 30;
+    bottom: 5%;
+    background-color: #000;
+    border-radius: 5px;
+    left: 8%;
+    display: none;
+}
+
+#toast.show{
+    transition: 0.5s;
+    display: block;
+}
+
+#toast span{
+    color: #f2f2f2;
+}
