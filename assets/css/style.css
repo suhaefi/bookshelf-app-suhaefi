@@ -324,8 +324,19 @@ input::placeholder{
     padding: 5px 0;
 }
 
-.not-finished ol li span, .finished ol li span{
+.not-finished ol li .title-and-author, .finished ol li .title-and-author{
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.title-and-author .title{
+    color: #000;
+}
+
+.title-and-author .author{
+    font-size: 12px;
 }
 
 .icon-wrapper-list-books{
@@ -348,6 +359,7 @@ input::placeholder{
     border-radius: 50px;
     cursor: pointer;
     border: 0px;
+    height: 20px;
 }
 
 .check{

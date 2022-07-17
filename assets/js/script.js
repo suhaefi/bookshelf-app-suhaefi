@@ -137,12 +137,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const iconWrapperList = document.createElement('div');
         iconWrapperList.classList.add('icon-wrapper-list-books');
 
-        const textTitle = document.createElement('span');
-        textTitle.innerText = bookObject.title;
+        const titleAndAuthor = document.createElement('div');
+        titleAndAuthor.className = 'title-and-author';
+
+        const title = document.createElement('span');
+        title.className = 'title';
+        title.innerText = bookObject.title;
+
+        const author = document.createElement('span');
+        author.className = 'author';
+        author.innerText = 'Penulis: ' + bookObject.author;
+
+        titleAndAuthor.append(title, author);
 
         const list = document.createElement('li');
-        list.setAttribute('id', 'book-${bookObject.id}');
-        list.append(textTitle, iconWrapperList);
+        list.setAttribute('id', `book-${bookObject.id}`);
+        list.append(titleAndAuthor, iconWrapperList);
 
         // Icon x = delete
         const x = document.createElement('div');
